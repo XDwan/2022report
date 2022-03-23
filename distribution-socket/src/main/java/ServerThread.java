@@ -6,10 +6,12 @@ import java.net.Socket;
 
 public class ServerThread extends Thread{
     Socket socket = null;
+    static int count = 0;
     ServerThread(Socket socket){
         this.socket = socket;
     }
     public  void run(){
+        System.out.println(Thread.currentThread().getName() + " start ");
         InputStream inputStream = null;
         InputStreamReader inputStreamReader = null;
         BufferedReader reader = null;

@@ -42,6 +42,11 @@ class ThreadTest extends Thread{
             System.out.println(message);
             out.println(message);
             out.flush();
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
 
         out.println("EOE");

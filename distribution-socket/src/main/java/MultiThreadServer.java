@@ -10,10 +10,8 @@ public class MultiThreadServer {
     public static void main(String[] args) throws IOException {
         ServerSocket serverSocket = new ServerSocket(8189);
         Socket socket = null;
-
         int count=0;
         System.out.println("Server listening at 8189");
-
         while (true){
             socket = serverSocket.accept();
             count++;
