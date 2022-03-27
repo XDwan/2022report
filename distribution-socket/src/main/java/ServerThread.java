@@ -22,7 +22,7 @@ public class ServerThread extends Thread{
             reader = new BufferedReader(inputStreamReader);
             String info = null;
             while((info = reader.readLine())!=null && ! info.equals("EOE")){
-                System.out.println("ServerThread "+this.getName()+" read "+info);
+                System.out.println("ServerThread "+this.getId()+" read "+info);
             }
             reader.close();
             inputStreamReader.close();

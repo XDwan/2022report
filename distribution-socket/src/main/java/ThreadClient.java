@@ -23,7 +23,12 @@ class ThreadTest extends Thread{
         count = t;
     }
 
-    public synchronized void run(){
+    private static synchronized int getTicket(){
+        ticket++;
+        return ticket;
+    }
+
+    public void run(){
         OutputStream outputStream = null;
         PrintWriter out = null;
         try {
@@ -37,8 +42,7 @@ class ThreadTest extends Thread{
 
         System.out.println(this.getName()+" Connect to Server ");
         for (int i=0;i<count;i++){
-            ticket ++;
-            String message = "client " + this.getName()+" sold ticket"+ ticket;
+            String message = "client " + this.getName()+" sold ticket"+ getTicket();
             System.out.println(message);
             out.println(message);
             out.flush();
