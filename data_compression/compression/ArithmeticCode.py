@@ -7,11 +7,14 @@
 @Description : 
 """
 
+from compression.utils import fraction2binary, binary2fraction
+
 
 class Arithmetic:
     """
     算术编码
     """
+
     def __init__(self, words_probability):
         """
         初始化算术编码，对各个区间进行划分
@@ -37,6 +40,8 @@ class Arithmetic:
             p_low = self.divide_range[self.words.index(word)]
             high = res * p_high + low
             low = res * p_low + low
+
+
         return [low, high]
 
     def decode(self, fraction, precision):

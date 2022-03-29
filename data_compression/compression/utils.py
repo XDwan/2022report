@@ -18,7 +18,7 @@ def fraction2binary(fraction, precision):
     tmp = fraction
     res = ""
     bits = 0
-
+    p = ""
     if tmp < 0:
         raise ValueError("fraction should be positive")
     if tmp > 1:
@@ -30,9 +30,11 @@ def fraction2binary(fraction, precision):
         tmp = tmp * 2
         if (tmp >= 1):
             tmp = tmp - 1
+            res += p
             res += "1"
+            p = ""
         else:
-            res += "0"
+            p += "0"
         if tmp == 0:
             break
         bits += 1
@@ -62,3 +64,27 @@ def binary2fraction(binary):
             raise ValueError("the string is not a binary")
         bits += 1
     return res
+
+
+def fraction2binary_shortest(width):
+    tmp_low = width[0]
+    tmp_high = width[1]
+    res = ""
+    while True:
+        tmp_low *= 2
+        tmp_high *= 2
+        if width[0] <= binary2fraction(res+"1") < width[1]:
+            return res+"1"
+        if width[0] <= binary2fraction(res+"0") < width[1]:
+            return res+"0"
+        if tmp_low >= 1 and tmp_high >= 1:
+            tmp_low = tmp_low - 1
+            tmp_high = tmp_high - 1
+            res += "1"
+        elif tmp_low < 1 and tmp_high < 1:
+            res += "0"
+        elif tmp_low < 1 and tmp_high >= 1:
+            tmp_high = tmp_high - 1
+            res += "0"
+        # print(res)
+
