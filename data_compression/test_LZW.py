@@ -13,6 +13,7 @@ compress = LZW()
 
 message = "ababcababac"
 res = compress.encode(message)
+print(message)
 print(res)
-print(compress.words_dict)
+# print(compress.words_dict)
 print(compress.decode(res))
