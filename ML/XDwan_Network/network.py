@@ -19,9 +19,10 @@ class Network:
 
     def forward(self, x):
         self.last_x = x
-        h = None
+        h = x
         for layer in self.layers:
-            h = layer.forward(x)
+            h = layer.forward(h)
+        return h
 
     def auto_grad(self, loss_grad):
         h_grad = loss_grad

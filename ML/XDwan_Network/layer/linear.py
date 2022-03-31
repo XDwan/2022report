@@ -36,7 +36,13 @@ class Linear:
         :return:
         """
         self.last_x = x
+        # print("x")
+        # print(x.shape)
+        # print("w")
+        # print(self.w.shape)
         self.out = np.dot(self.w, x) + self.b
+        # print("out")
+        # print(self.out.shape)
         return self.out
 
     def auto_grad(self, loss_grad):

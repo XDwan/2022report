@@ -19,6 +19,21 @@ def normal_data(num):
     X = np.dstack((x1, x2)).reshape((num, 2, 1))
     return generate_dataset(X, y)
 
+def xor_data():
+
+    X = np.array([
+                [0,0,0],
+                [0,0,1],
+                [0,1,0],
+                [0,1,1],
+                [1,0,0],
+                [1,0,1],
+                [1,1,0],
+                [1,1,1]   
+                ])
+    X = X.reshape([8,3,1])
+    y = np.array([0,1,1,0,1,0,0,1])
+    return generate_dataset(X,y)
 
 def generate_dataset(X, labels):
     dataset = []
