@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dubbo.bookInfo.mapper.BookMapper">
+    <select id="selectAllBookList" resultType="com.dubbo.bookInfo.entity.Book">
+        select * from book
+    </select>
+
+    <insert id="insertBook" parameterType="com.dubbo.bookInfo.entity.Book">
+        insert into book(id, name)
+        values (#{book.id},#{book.name})
+    </insert>
+
+    <select id="selectLikeBookList" resultType="com.dubbo.bookInfo.entity.Book" >
+        select * from book where name like '%${bookName}%'
+    </select>
+
+    <select id="selectBookByID" resultType="com.dubbo.bookInfo.entity.Book">
+        select * from book where id = #{id}
+    </select>
+
+    <delete id="deleteBookByID">
+        delete from book where id = #{id}
+    </delete>
+</mapper>
