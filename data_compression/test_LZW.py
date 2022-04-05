@@ -13,7 +13,8 @@ compress = LZW()
 
 message = "ababcababac"
 res = compress.encode(message)
-print(message)
-print(res)
+print("压缩信息为 "+message)
+print("压缩结果为 "+res)
 # print(compress.words_dict)
-print(compress.decode(res))
+print("解压结果为 "+compress.decode(res))
+ 

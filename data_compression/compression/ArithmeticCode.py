@@ -40,8 +40,6 @@ class Arithmetic:
             p_low = self.divide_range[self.words.index(word)]
             high = res * p_high + low
             low = res * p_low + low
-
-
         return [low, high]
 
     def decode(self, fraction, precision):
