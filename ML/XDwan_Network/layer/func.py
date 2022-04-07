@@ -8,8 +8,8 @@
 """
 
 import numpy as np
-from layerModule import Layer
-from utils import sigmoid
+from layer.layerModule import Layer
+from layer.utils import sigmoid
 
 
 class Relu(Layer):
@@ -42,7 +42,7 @@ class Sigmoid(Layer):
         return self.z
 
     def auto_grad(self, loss_grad):
-        return self.z(1 - self.z) * loss_grad
+        return self.z*(1 - self.z) * loss_grad
 
     def backward(self, lr):
         pass
