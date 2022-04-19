@@ -22,3 +22,5 @@ class Layer:
 
     def backward(self, lr):
         pass
+    def summary(self):
+        pass

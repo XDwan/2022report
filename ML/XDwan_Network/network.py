@@ -34,3 +34,7 @@ class Network:
     def backward(self, lr):
         for layer in self.layers:
             layer.backward(lr)
+    
+    def summary(self):
+        for layer in self.layers:
+            layer.summary()

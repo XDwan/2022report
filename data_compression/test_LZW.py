@@ -10,7 +10,6 @@
 from compression.LZW import LZW
 
 compress = LZW()
-
 message = "ababcababac"
 res = compress.encode(message)
 print("压缩信息为 "+message)

@@ -7,11 +7,12 @@
 @Description : 
 """
 import numpy as np
+from layer.layerModule import Layer
 
 # from utils import normal
 from layer.utils import normal
 
-class Linear:
+class Linear(Layer):
 
     def __init__(self, input_num, output_num):
         """
@@ -58,4 +59,10 @@ class Linear:
         w_grad = np.dot(self.grad, self.last_x.T)
         self.w -= lr * w_grad
         self.b -= lr * self.grad
+
+    def summary(self):
+        print(self.w.shape)
+        print(self.w)
+        print(self.b.shape)
+        print(self.b)
 
