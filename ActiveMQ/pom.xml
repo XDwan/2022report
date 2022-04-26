@@ -50,9 +50,9 @@
             <version>4.4.14</version>
         </dependency>
         <dependency>
-            <groupId>org.knowm.xchart</groupId>
-            <artifactId>xchart</artifactId>
-            <version>3.7.0</version>
+            <groupId>org.jfree</groupId>
+            <artifactId>jfreechart</artifactId>
+            <version>1.5.2</version>
         </dependency>
     </dependencies>
 </project>

@@ -15,7 +15,7 @@ public class MOMService {
     public MOMService(String ReceiveName,String SendName){
         this.ReceiveName = ReceiveName;
         this.SendName = SendName;
-        factory = new ActiveMQConnectionFactory("tcp://127.0.0.1:61616");
+        factory = new ActiveMQConnectionFactory("tcp://192.168.31.181:61616");
         factory.setTrustAllPackages(true);
         try {
             Connection connection = factory.createConnection();

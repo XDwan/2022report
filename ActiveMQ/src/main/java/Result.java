@@ -1,4 +1,5 @@
 import java.io.Serializable;
+import java.text.DecimalFormat;
 
 public class Result implements Serializable {
     double mean;
@@ -8,11 +9,10 @@ public class Result implements Serializable {
 
     @Override
     public String toString() {
-        return "Result{" +
-                "mean=" + mean +
-                ", var=" + var +
-                ", min=" + min +
-                ", max=" + max +
-                '}';
+        DecimalFormat df = new DecimalFormat("0.00");
+        return "Sign:"+"mean=" + df.format(mean) +
+                ", var=" + df.format(var) +
+                ", min=" + df.format(min) +
+                ", max=" + df.format(max) ;
     }
 }
